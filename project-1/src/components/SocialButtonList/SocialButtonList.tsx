@@ -1,19 +1,18 @@
 import SocialButton from "../SocialButton/SocialButton";
-import {ReactComponent as Facebook} from '../../assets/facebook.svg'
-import {ReactComponent as Google} from '../../assets/google.svg'
-import {ReactComponent as Linkedin} from '../../assets/linkedin.svg'
+
+import {FaFacebookF} from 'react-icons/fa';
+import {FaGoogle} from 'react-icons/fa';
+import {FaLinkedinIn} from 'react-icons/fa';
 
 function SocialButtonList(){
     const socials = [
-        {id: 0, color: 'red', icon: <Google />, href: 'https://google.pl/'},
-        {id: 1, icon: <Facebook/>, color: 'blue', href: 'https://google.pl/'},
-        {id: 2, icon: <Linkedin/>, color: 'cyan', href: 'https://google.pl/'}
+        {id: 0, color: '#e90800', icon: FaGoogle, href: 'https://google.pl/'},
+        {id: 1, color: '#4768aa', icon: FaFacebookF, href: 'https://google.pl/'},
+        {id: 2, color: '#0068c1', icon: FaLinkedinIn, href: 'https://google.pl/'}
     ];
 
     const socialItems = socials.map(social => 
-        <SocialButton key={social.id} color={social.color} href={social.href}>
-            {social.icon}
-        </SocialButton>
+        <SocialButton key={social.id} color={social.color} href={social.href} icon={social.icon}/>
     )
 
     return (

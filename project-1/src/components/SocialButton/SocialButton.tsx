@@ -1,15 +1,17 @@
-import { ReactElement, ReactNode, SVGProps } from "react"
+import { ReactElement, ReactNode, SVGProps } from "react";
+import React from 'react';
+import { IconType } from "react-icons/lib/esm/iconBase"
 
 interface socialButtonProps {
-    children: ReactNode,
     color: string,
-    href: string
+    href: string,
+    icon: IconType
 }
 
-function SocialButton({children, color, href}: socialButtonProps){
+function SocialButton({color, href, icon}: socialButtonProps){
     return(
-        <a className={"rounded-full p-2 border-4 border-"+color+"-500 text-"+color+"-500"} href={href}>
-            {children}
+        <a className={"rounded-full p-2 border-2"} style={{borderColor: color, color: color}} href={href}>
+            {React.createElement(icon)}
         </a>
     )
 }
