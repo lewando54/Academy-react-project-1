@@ -59,15 +59,16 @@ function Form(){
             </> : <>
                 <Checkbox id="remember" name="Remember" onChange={handleFormChange}>Remember me?</Checkbox>
                 <Button color="primary" onClick={handleLoginSubmit}>Sign in</Button>
+                <a className='w-full text-sm text-gray-400 text-right cursor-pointer -mt-2'>Forgot password?</a>
             </>}
 
             <Or />
             <SocialButtonList />
 
             {isRegister ? <>
-                <div className='flex gap-1 text-sm'><p>Already a user?</p><a onClick={handleSigningUpOrIn} className='underline'>SIGN IN</a></div>
+                <div className='flex gap-1 text-sm text-gray-500 cursor-pointer'><p>Already a user?</p><a onClick={handleSigningUpOrIn} className='underline'>SIGN IN</a></div>
             </> : <>
-                <div className='flex gap-1 text-sm'><p>Need an account?</p><a onClick={handleSigningUpOrIn} className='underline'>SIGN UP</a></div>
+                <div className='flex gap-1 text-sm text-gray-500 cursor-pointer'><p>Need an account?</p><a onClick={handleSigningUpOrIn} className='underline'>SIGN UP</a></div>
             </>}
         </form>
     )
