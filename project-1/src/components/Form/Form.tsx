@@ -49,7 +49,7 @@ function Form(){
             {isRegister ? <>
                 <p className="w-full uppercase text-left font-bold">Sign up</p>
             </> : <>
-                <p className="w-full uppercase text-left font-bold">Sign in</p>
+                <p className="w-full uppercase text-left font-bold">Login</p>
             </>}
 
             <Input type="email" id="email" name="Email" onChange={handleFormChange}/>
@@ -58,7 +58,7 @@ function Form(){
                 <Button color="primary" onClick={handleRegisterSubmit}>Sign up</Button>
             </> : <>
                 <Checkbox id="remember" name="Remember" onChange={handleFormChange}>Remember me?</Checkbox>
-                <Button color="primary" onClick={handleLoginSubmit}>Sign in</Button>
+                <Button color="primary" onClick={handleLoginSubmit}>Login</Button>
                 <a className='w-full text-sm text-gray-400 text-right cursor-pointer -mt-2'>Forgot password?</a>
             </>}
 
