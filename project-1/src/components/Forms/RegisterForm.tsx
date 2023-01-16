@@ -5,6 +5,8 @@ import Input from "../Input/Input"
 import Or from "../Or/Or"
 import SocialButtonList from '../SocialButtonList/SocialButtonList'
 import Checkbox from '../Checkbox/Checkbox'
+import FormContainer from './FormContainer'
+import FormTitle from './FormTitle'
 
 function RegisterForm(){
     const [email, setEmail] = useState('');
@@ -20,15 +22,15 @@ function RegisterForm(){
     }
 
     return (
-        <div className="w-3/4 h-3/4 md:w-2/6 lg:w-1/4 flex flex-col items-center gap-5 p-10 rounded-lg text-black shadow-[0_4px_6px_rgba(0,0,0,0.3)] bg-white">
-            <p className="w-full uppercase text-left font-bold">Sign up</p>
+        <FormContainer>
+            <FormTitle>Sign up</FormTitle>
             <Input type="email" id="email" name="Email" onInputChange={(email: string) => setEmail(email)}/>
             <Input type="password" id="password" name="Password" onInputChange={(password: string) => setPassword(password)}/>
             <Button color="primary" onClick={handleRegisterSubmit}>Sign up</Button>
-            <Or text='Or'/>
+            <Or text='OR'/>
             <SocialButtonList />   
-            <div className='flex gap-1 text-sm text-gray-500 cursor-pointer'><p>Already a user?</p><Link to='/login' className='underline'>SIGN IN</Link></div>
-        </div>
+            <div className='flex gap-1 text-sm text-gray-500'><p>Already a user?</p><Link to='/login' className='underline'>SIGN IN</Link></div>
+        </FormContainer>
     )
 }
 

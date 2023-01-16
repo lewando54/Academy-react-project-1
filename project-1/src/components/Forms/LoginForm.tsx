@@ -5,6 +5,8 @@ import Input from "../Input/Input"
 import Or from "../Or/Or"
 import SocialButtonList from '../SocialButtonList/SocialButtonList'
 import Checkbox from '../Checkbox/Checkbox'
+import FormContainer from './FormContainer'
+import FormTitle from './FormTitle'
 
 function Form(){
     const [email, setEmail] = useState('');
@@ -21,17 +23,17 @@ function Form(){
     }
 
     return (
-        <div className="w-3/4 h-3/4 md:w-2/6 lg:w-1/4 flex flex-col items-center gap-5 p-10 rounded-lg text-black shadow-[0_4px_6px_rgba(0,0,0,0.3)] bg-white">
-            <p className="w-full uppercase text-left font-bold">Login</p>
+        <FormContainer>
+            <FormTitle>Login</FormTitle>
             <Input type="email" id="email" name="Email" onInputChange={(email: string) => setEmail(email)}/>
             <Input type="password" id="password" name="Password" onInputChange={(password: string) => setPassword(password)}/>
             <Checkbox id="remember" name="Remember" onChecked={(rememberMe: boolean) => setRememberMe(rememberMe)}>Remember me?</Checkbox>
             <Button color="primary" onClick={handleLoginSubmit}>Login</Button>
             <a className='w-full text-sm text-gray-400 text-right cursor-pointer -mt-2'>Forgot password?</a>
-            <Or text='Or'/>
+            <Or text='OR'/>
             <SocialButtonList />
-            <div className='flex gap-1 text-sm text-gray-500 cursor-pointer'><p>Need an account?</p><Link to='/register' className='underline'>SIGN UP</Link></div>
-        </div>
+            <div className='flex gap-1 text-sm text-gray-500'><p>Need an account?</p><Link to='/register' className='underline'>SIGN UP</Link></div>
+        </FormContainer>
     )
 }
 
