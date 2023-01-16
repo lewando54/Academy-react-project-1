@@ -1,12 +1,25 @@
+import React, {useState, useEffect} from 'react'
+
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-    id: string
+    id: string,
+    onInputChange: Function
 }
 
-function Input({id, ...props}: InputProps){
+function Input({id, onInputChange, name}: InputProps){
+    const [value, setValue] = useState('');
+
+    function handleChange(e: React.FormEvent<HTMLInputElement>){
+        setValue(e.currentTarget.value);
+    }
+
+    useEffect(() => {
+        onInputChange(value);
+    }, [value]);
+    
     return (
         <div className="w-full">
-            <label htmlFor={id}>{props.name}</label>
-            <input id={id} className="w-full border-2 bg-white rounded-md text-lg p-1" {...props}/>
+            <label htmlFor={id}>{name}</label>
+            <input value={value} onChange={handleChange} id={id} className="w-full border-2 bg-white rounded-md text-lg p-1"/>
         </div>
     )
 }

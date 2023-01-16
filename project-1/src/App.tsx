@@ -1,15 +1,19 @@
-import { useState } from 'react'
-import {ReactComponent as ReactLogo} from './assets/react.svg'
 import './App.css'
-
-import Form from './components/Form/Form';
-
+import RegisterForm from './components/Forms/RegisterForm';
+import LoginForm from './components/Forms/LoginForm';
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+// React router! Styled components
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className='w-full h-full flex place-items-center justify-center'>
-      <Form />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Navigate to='/register' />} />
+          <Route path='/register' element={<RegisterForm />} />
+          <Route path='/login' element={<LoginForm />} />
+        </Routes>
+      </BrowserRouter>
+      
     </div>
   )
 }
