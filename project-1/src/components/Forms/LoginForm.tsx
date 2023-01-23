@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, { useRef} from 'react'
 import {Link} from 'react-router-dom'
 import Button from "../Button/Button"
 import Input from "../Input/Input"
@@ -9,22 +9,19 @@ import FormContainer from './FormContainer.style'
 import FormTitle from './FormTitle.style'
 
 function Form(){
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [rememberMe, setRememberMe] = useState(false);
-
     const emailInputRef = useRef<HTMLInputElement>(null);
+    const passwordInputRef = useRef<HTMLInputElement>(null);
+    const rememberMeCheckboxRef = useRef<HTMLInputElement>(null);
     // use ref
     // ForwardRef
     // use imperative handle
 
     const handleLoginSubmit = () => {
         //Make request to backend
-        setEmail(emailInputRef.current!.value);
         console.log('Login:');
-        console.log(email);
-        console.log(password);
-        console.log(rememberMe);
+        console.log(emailInputRef.current!.value);
+        console.log(passwordInputRef.current!.value);
+        console.log(rememberMeCheckboxRef.current!.checked);
         console.log('---------------');
     }
 
@@ -36,8 +33,9 @@ function Form(){
         <FormContainer>
             <FormTitle>Login</FormTitle>
             <Input innerRef={emailInputRef} type="email" id="email" name="Email"/>
-            <Checkbox id="remember" name="Remember" onChecked={(rememberMe: boolean) => setRememberMe(rememberMe)}>Remember me?</Checkbox>
-            <Button color="primary" onClick={handleLoginSubmit}>Login</Button>
+            <Input innerRef={passwordInputRef} type="password" id="password" name="Password"/>
+            <Checkbox innerRef={rememberMeCheckboxRef} id="remember" name="Remember">Remember me?</Checkbox>
+            <Button color={"primary"} onClick={handleLoginSubmit}>Login</Button>
             <a className='w-full text-sm text-gray-400 text-right cursor-pointer -mt-2'>Forgot password?</a>
             <Or text='OR'/>
             <SocialButtonList />

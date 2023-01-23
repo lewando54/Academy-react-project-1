@@ -1,6 +1,6 @@
 import SocialButton, { iconProp } from "../SocialButton/SocialButton";
 
-// zaimportuj typ
+import SocialButtonListStyle from "./SocialButtonList.style";
 
 function SocialButtonList(){
     const socials: {id: number, color: string, icon: iconProp, href: URL['href']}[] = [
@@ -14,9 +14,9 @@ function SocialButtonList(){
     )
 
     return (
-        <div className="w-full flex justify-center gap-4">
+        <SocialButtonListStyle>
             {socialItems}
-        </div>
+        </SocialButtonListStyle>
     )
 }
 

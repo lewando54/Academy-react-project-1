@@ -2,6 +2,8 @@ import {FaFacebookF} from 'react-icons/fa';
 import {FaGoogle} from 'react-icons/fa';
 import {FaLinkedinIn} from 'react-icons/fa';
 
+import SocialButtonStyle from './SocialButton.style';
+
 export type iconProp = 'facebook'|'google'|'linkedin';
 
 interface socialButtonProps {
@@ -17,9 +19,9 @@ function SocialButton({color, href, icon}: socialButtonProps){
         'linkedin': <FaLinkedinIn/>
     }
     return(
-        <a className={"rounded-full p-2 border-2"} style={{borderColor: color, color: color}} href={href}>
+        <SocialButtonStyle style={{borderColor: color, color: color}} href={href}>
             {icons[icon]}
-        </a>
+        </SocialButtonStyle>
     )
 }
 

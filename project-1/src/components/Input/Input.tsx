@@ -1,4 +1,4 @@
-import React, {useImperativeHandle} from 'react'
+import React from 'react'
 import {StyledInput} from './Input.style';
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -8,9 +8,6 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 function Input({id, name, type, innerRef}: InputProps){
-    useImperativeHandle(innerRef, () => ({
-        
-    }))
 
     return (
         <div className="w-full">
