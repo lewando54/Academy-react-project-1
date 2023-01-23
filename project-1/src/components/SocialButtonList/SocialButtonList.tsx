@@ -1,7 +1,9 @@
-import SocialButton from "../SocialButton/SocialButton";
+import SocialButton, { iconProp } from "../SocialButton/SocialButton";
+
+// zaimportuj typ
 
 function SocialButtonList(){
-    const socials = [
+    const socials: {id: number, color: string, icon: iconProp, href: URL['href']}[] = [
         {id: 0, color: '#e90800', icon: 'google', href: 'https://google.pl/'},
         {id: 1, color: '#4768aa', icon: 'facebook', href: 'https://google.pl/'},
         {id: 2, color: '#0068c1', icon: 'linkedin', href: 'https://google.pl/'}

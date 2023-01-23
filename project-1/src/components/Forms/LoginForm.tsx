@@ -1,20 +1,26 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useRef} from 'react'
 import {Link} from 'react-router-dom'
 import Button from "../Button/Button"
 import Input from "../Input/Input"
-import Or from "../Or/Or"
+import Or from "../DividerWithText/DividerWithText"
 import SocialButtonList from '../SocialButtonList/SocialButtonList'
 import Checkbox from '../Checkbox/Checkbox'
-import FormContainer from './FormContainer'
-import FormTitle from './FormTitle'
+import FormContainer from './FormContainer.style'
+import FormTitle from './FormTitle.style'
 
 function Form(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [rememberMe, setRememberMe] = useState(false);
 
-    const handleLoginSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    const emailInputRef = useRef<HTMLInputElement>(null);
+    // use ref
+    // ForwardRef
+    // use imperative handle
+
+    const handleLoginSubmit = () => {
         //Make request to backend
+        setEmail(emailInputRef.current!.value);
         console.log('Login:');
         console.log(email);
         console.log(password);
@@ -22,11 +28,14 @@ function Form(){
         console.log('---------------');
     }
 
+    // przepisać tutaj onInputChange ()=>
+    // Dodać ESLint - .eslintrc.js
+    // <Input type="password" id="password" name="Password" onInputChange={onInputChange}/>
+
     return (
         <FormContainer>
             <FormTitle>Login</FormTitle>
-            <Input type="email" id="email" name="Email" onInputChange={(email: string) => setEmail(email)}/>
-            <Input type="password" id="password" name="Password" onInputChange={(password: string) => setPassword(password)}/>
+            <Input innerRef={emailInputRef} type="email" id="email" name="Email"/>
             <Checkbox id="remember" name="Remember" onChecked={(rememberMe: boolean) => setRememberMe(rememberMe)}>Remember me?</Checkbox>
             <Button color="primary" onClick={handleLoginSubmit}>Login</Button>
             <a className='w-full text-sm text-gray-400 text-right cursor-pointer -mt-2'>Forgot password?</a>

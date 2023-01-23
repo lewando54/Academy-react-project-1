@@ -2,11 +2,11 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import Button from "../Button/Button"
 import Input from "../Input/Input"
-import Or from "../Or/Or"
+import Or from "../DividerWithText/DividerWithText"
 import SocialButtonList from '../SocialButtonList/SocialButtonList'
 import Checkbox from '../Checkbox/Checkbox'
-import FormContainer from './FormContainer'
-import FormTitle from './FormTitle'
+import FormContainer from './FormContainer.style'
+import FormTitle from './FormTitle.style'
 
 function RegisterForm(){
     const [email, setEmail] = useState('');

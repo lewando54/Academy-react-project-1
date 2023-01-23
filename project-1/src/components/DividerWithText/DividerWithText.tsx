@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-interface divider{
-    text?: string
+interface IDividerProps{
+    text: string
 }
 
 const StyledHr = styled.hr`
@@ -15,13 +15,11 @@ const StyledDiv = styled.div`
     align-items: center;
 `;
 
-function Or({text}: divider){
-    const Text = (text != undefined) ? <p className="p-1 border-2 text-gray-400 rounded-md text-sm">{text}</p> : '';
-
+function Or({text = ''}: IDividerProps){
     return (
         <StyledDiv>
             <StyledHr/>
-            {Text} 
+            {text ? <p className="p-1 border-2 text-gray-400 rounded-md text-sm">{text}</p> : null} 
             <StyledHr/>
         </StyledDiv>
     )
