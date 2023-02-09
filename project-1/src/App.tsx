@@ -1,19 +1,17 @@
-import './App.css'
-import RegisterForm from './components/Forms/RegisterForm';
-import LoginForm from './components/Forms/LoginForm';
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import React from 'react'
+import RegisterPage from './pages/Register/RegisterPage'
+import LoginPage from './pages/Login/LoginPage'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
-function App() {
+function App (): React.ReactElement {
   return (
-    <div className='w-full h-full flex place-items-center justify-center'>
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Navigate to='/register' />} />
-          <Route path='/register' element={<RegisterForm />} />
-          <Route path='/login' element={<LoginForm />} />
+          <Route path='/register' element={<RegisterPage />} />
+          <Route path='/login' element={<LoginPage />} />
         </Routes>
       </BrowserRouter>
-    </div>
   )
 }
 
