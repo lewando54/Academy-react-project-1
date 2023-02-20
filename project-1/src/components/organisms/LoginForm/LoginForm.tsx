@@ -1,11 +1,11 @@
-import React, { useRef } from 'react'
+import React, { useRef, useImperativeHandle, forwardRef } from 'react'
 import Button from '../../atoms/Button/Button'
 import InputWithLabel from '../../molecules/InputWithLabel/InputWithLabel'
-import Or from '../../atoms/DividerWithText/DividerWithText'
+import Or from '../../atoms/Divider/Divider'
 import SocialButtonList from '../../molecules/SocialButtonList/SocialButtonList'
 import CheckboxWithLabel from '../../molecules/CheckboxWithLabel/CheckboxWithLabel'
-import FormContainer from './FormContainer.style'
-import FormTitle from '../../atoms/TitleHeading/TitleHeading.style'
+import FormContainer from './LoginForm.style'
+import Heading from '../../atoms/Heading/Heading.style'
 import styled from 'styled-components'
 import TextWithLink from '../../atoms/TextWithLink/TextWithLink'
 
@@ -18,34 +18,35 @@ const ForgotPasswordElement = styled.a`
     cursor: pointer;
 `
 
-function Form (): React.ReactElement {
-  const emailInputRef = useRef<HTMLInputElement>(null)
-  const passwordInputRef = useRef<HTMLInputElement>(null)
-  const rememberMeCheckboxRef = useRef<HTMLInputElement>(null)
+function Form (props: any, ref: any): React.ReactElement {
+  const emailInputRef = useRef(null)
+  const passwordInputRef = useRef(null)
+  const rememberMeCheckboxRef = useRef(null)
+
+  useImperativeHandle(ref, () => {
+    return {
+      emailInputRef: emailInputRef.current,
+      passwordInputRef: passwordInputRef.current,
+      rememberMeCheckboxRef: rememberMeCheckboxRef.current
+    }
+  }, [emailInputRef, passwordInputRef, rememberMeCheckboxRef])
   // use ref
   // ForwardRef
   // use imperative handle
-
-  const handleLoginSubmit = (): void => {
-    // Make request to backend
-    console.log('Login:')
-    console.log(emailInputRef.current?.value)
-    console.log(passwordInputRef.current?.value)
-    console.log(rememberMeCheckboxRef.current?.checked)
-    console.log('---------------')
-  }
 
   // przepisać tutaj onInputChange ()=>
   // Dodać ESLint - .eslintrc.js
   // <Input type="password" id="password" name="Password" onInputChange={onInputChange}/>
 
+  // inputwlabel -> ref zrobić ref nie na dolnym elemencie -> forwardRef, useImperativeHandle
+
   return (
         <FormContainer>
-            <FormTitle>Login</FormTitle>
-            <InputWithLabel innerRef={emailInputRef} type="email" id="email" name="Email" required>Email</InputWithLabel>
-            <InputWithLabel innerRef={passwordInputRef} type="password" id="password" name="Password" required>Password</InputWithLabel>
-            <CheckboxWithLabel innerRef={rememberMeCheckboxRef} id="remember" name="Remember">Remember me?</CheckboxWithLabel>
-            <Button color={'primary'} onClick={handleLoginSubmit}>Login</Button>
+            <Heading level={level}>Login</Heading>
+            <InputWithLabel ref={emailInputRef} type="email" id="email" name="Email" required>Email</InputWithLabel>
+            <InputWithLabel ref={passwordInputRef} type="password" id="password" name="Password" required>Password</InputWithLabel>
+            <CheckboxWithLabel ref={rememberMeCheckboxRef} id="remember" name="Remember">Remember me?</CheckboxWithLabel>
+            <Button color={'primary'} onClick={props.onSubmit}>Login</Button>
             <ForgotPasswordElement>Forgot password?</ForgotPasswordElement>
             <Or text='OR'/>
             <SocialButtonList />
@@ -54,4 +55,4 @@ function Form (): React.ReactElement {
   )
 }
 
-export default Form
+export default forwardRef(Form)

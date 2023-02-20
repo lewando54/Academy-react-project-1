@@ -1,5 +1,7 @@
 import React from 'react'
 import { StyledButton } from './Button.style'
+// Przekazywanie wartości do styled componentów
+
 
 type colorProp = 'primary' | 'secondary'
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

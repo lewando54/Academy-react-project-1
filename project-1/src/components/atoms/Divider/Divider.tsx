@@ -26,14 +26,16 @@ const StyledP = styled.p`
     margin: 0;
 `
 
-function Or ({ text = '' }: IDividerProps): React.ReactElement {
+// Divider -> Text jest optional !! Zmień nazwę. Sprawdzić defaultProps
+
+function Divider ({ text = '' }: IDividerProps): React.ReactElement {
   return (
         <StyledDiv>
             <StyledHr/>
-            {(text.length > 0) ? <StyledP>{text}</StyledP> : null}
+            { text ? <StyledP>{text}</StyledP> : null}
             <StyledHr/>
         </StyledDiv>
   )
 }
 
-export default Or
+export default Divider

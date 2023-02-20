@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
+import StyledCheckbox from './Checkbox.style'
 
 export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  innerRef: React.RefObject<HTMLInputElement>
   id: string
 }
 
-function Checkbox ({ id, children, innerRef }: CheckboxProps): React.ReactElement {
+function Checkbox ({ id, children }: CheckboxProps, ref: any): React.ReactElement {
   return (
-        <input ref={innerRef} id={id} type="checkbox"/>
+        <StyledCheckbox ref={ref} id={id} type={'checkbox'}/>
   )
 }
 
-export default Checkbox
+export default forwardRef(Checkbox)

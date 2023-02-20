@@ -20,4 +20,6 @@ const FormContainer = styled.div`
     }
 `
 
+// Rozdzielić styl
+
 export default FormContainer

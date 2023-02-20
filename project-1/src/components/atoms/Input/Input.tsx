@@ -1,17 +1,17 @@
-import React from 'react'
-import { StyledInput } from './Input.style'
+import React, { forwardRef } from 'react'
+import StyledInput from './Input.style'
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  innerRef: React.RefObject<HTMLInputElement>
   id: string
+  name: string
   type: string
   required?: boolean
 }
 
-function Input ({ id, name, type, innerRef, required }: InputProps): React.ReactElement {
+function Input (props: InputProps, ref: any): React.ReactElement {
   return (
-        <StyledInput ref={innerRef} id={id} name={name} type={type} required/>
+    <StyledInput id={props.id} name={props.name} type={props.type} required={props.required} ref={ref} />
   )
 }
 
-export default Input
+export default forwardRef(Input)

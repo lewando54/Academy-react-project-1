@@ -12,7 +12,7 @@ function TextWithLink ({ pText, href, anchorText }: TextWithLinkProps): React.Re
   return (
         <StyledDiv>
             <p>{pText}</p>
-            <Link to={href} className='underline'>
+            <Link to={href} style={{ textDecoration: 'underline' }}>
                 {anchorText}
             </Link>
         </StyledDiv>

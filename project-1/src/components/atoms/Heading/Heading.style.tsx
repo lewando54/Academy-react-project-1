@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-const FormTitle = styled.h1`
+// Heading tylko, nie title
+
+const StyledHeading = styled.div`
     width: 100%;
     text-transform: uppercase;
     text-align: left;
@@ -8,4 +10,4 @@ const FormTitle = styled.h1`
     font-size: 1rem;
 `
 
-export default FormTitle
+export default StyledHeading

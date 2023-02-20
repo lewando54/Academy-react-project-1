@@ -16,7 +16,3 @@ function App (): React.ReactElement {
 }
 
 export default App
-
-// Przerobić komponenty na atomic design
-// /Atoms /Molecules /Organisms /Templates
-// /Screens - Podstrony (nie w components)

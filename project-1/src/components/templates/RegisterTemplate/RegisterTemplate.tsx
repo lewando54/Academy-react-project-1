@@ -1,10 +1,10 @@
-import React from 'react'
-import RegisterForm from '../../organisms/LoginForm/RegisterForm'
+import React, { forwardRef } from 'react'
+import RegisterForm from '../../organisms/RegisterForm/RegisterForm'
 
-function RegisterTemplate (): React.ReactElement {
+function RegisterTemplate (props: any, ref: any): React.ReactElement {
   return (
-        <RegisterForm />
+        <RegisterForm ref={ref} onSubmit={props.onSubmit}/>
   )
 }
 
-export default RegisterTemplate
+export default forwardRef(RegisterTemplate)
