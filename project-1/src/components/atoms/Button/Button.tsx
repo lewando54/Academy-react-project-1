@@ -1,7 +1,5 @@
 import React from 'react'
 import { StyledButton } from './Button.style'
-// Przekazywanie wartości do styled componentów
-
 
 type colorProp = 'primary' | 'secondary'
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,13 +8,8 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 function Button ({ color, children, onClick }: ButtonProps): React.ReactElement {
-  const colorOptions: { [key in colorProp]: string } = {
-    primary: 'rgb(236 72 153)',
-    secondary: 'rgb(229 231 235)'
-  }
-
   return (
-        <StyledButton onClick={onClick} style={{ backgroundColor: colorOptions[color] }}>
+        <StyledButton onClick={onClick} color={color}>
             {children}
         </StyledButton>
   )

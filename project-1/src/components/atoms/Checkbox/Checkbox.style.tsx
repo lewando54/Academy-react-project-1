@@ -25,12 +25,12 @@ const StyledCheckbox = styled.input`
     }
 
     &:hover{
-        border: 0.15em solid rgb(236 72 153);
+        border: 0.15em solid ${props => (props.color != null) ? props.color : 'var(--primary)'};
     }
 
     &:checked {
-        border: 0.15em solid rgb(236 72 153);
-        background-color: rgb(236 72 153);
+        border: 0.15em solid ${props => (props.color != null) ? props.color : 'var(--primary)'};
+        background-color: ${props => (props.color != null) ? props.color : 'var(--primary)'};
         position: relative;
         display: flex;
         justify-content: center;

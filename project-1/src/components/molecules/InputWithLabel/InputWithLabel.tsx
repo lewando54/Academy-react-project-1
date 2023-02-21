@@ -14,6 +14,4 @@ function InputWithLabel (props: InputWithLabelProps, ref: any): React.ReactEleme
   )
 }
 
-// imperative tutaj może rozszerzyć
-
 export default forwardRef(InputWithLabel)

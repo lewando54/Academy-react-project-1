@@ -1,17 +1,15 @@
 import React, { useRef } from 'react'
 import LoginTemplate from '../../components/templates/LoginTemplate/LoginTemplate'
 
-// Pages - powinien zawierać logikę, a nie style
-
 function LoginPage (): React.ReactElement {
-  const loginRef = useRef<any>()
+  const loginRef = useRef<any>(null)
 
   const handleLoginSubmit = (): void => {
     // Make request to backend
     console.log('Login:')
-    console.log(loginRef.current?.emailInputRef.value)
-    console.log(loginRef.current?.passwordInputRef.value)
-    console.log(loginRef.current?.rememberMeCheckboxRef.checked)
+    console.log(loginRef.current.email.value)
+    console.log(loginRef.current.password.value)
+    console.log(loginRef.current.rememberMe.checked)
     console.log('---------------')
   }
 

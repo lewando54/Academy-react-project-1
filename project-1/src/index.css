@@ -7,6 +7,9 @@
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
 
+  --primary: rgb(236 72 153);
+  --secondary: rgb(229 231 235);
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

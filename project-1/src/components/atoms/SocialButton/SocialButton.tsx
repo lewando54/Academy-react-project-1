@@ -16,7 +16,7 @@ function SocialButton ({ color, href, icon }: socialButtonProps): React.ReactEle
     linkedin: <FaLinkedinIn/>
   }
   return (
-        <SocialButtonStyle style={{ borderColor: color, color }} href={href}>
+        <SocialButtonStyle color={color} href={href}>
             {icons[icon]}
         </SocialButtonStyle>
   )

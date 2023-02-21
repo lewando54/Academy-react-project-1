@@ -13,4 +13,10 @@ export const StyledButton = styled.button`
     letter-spacing: 0.025em;
     border: 0;
     cursor: pointer;
+    background-color: var(--${props => props.color});
+    transition: all .2s ease-in-out;
+
+    &:hover{
+        transform: scale(1.05);
+    }
 `

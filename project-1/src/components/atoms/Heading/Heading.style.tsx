@@ -8,6 +8,7 @@ const StyledHeading = styled.div`
     text-align: left;
     font-weight: 700;
     font-size: 1rem;
+    margin: 0;
 `
 
 export default StyledHeading
