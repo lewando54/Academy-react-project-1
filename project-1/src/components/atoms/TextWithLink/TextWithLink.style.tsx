@@ -8,3 +8,8 @@ export const StyledDiv = styled.div`
     color: rgb(107 114 128 / 1);
     align-items: center;
 `
+
+export const StyledLink = styled.a`
+    text-decoration: underline;
+    cursor: pointer;
+`

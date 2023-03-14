@@ -5,11 +5,11 @@ import CheckboxWithLabelWrapper from './CheckboxWithLabel.style'
 
 type CheckboxWithLabelProps = CheckboxProps & LabelProps
 
-function CheckboxWithLabel (props: CheckboxWithLabelProps, ref: any): React.ReactElement {
+function CheckboxWithLabel (props: CheckboxWithLabelProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
   return (
         <CheckboxWithLabelWrapper>
             <Label htmlFor={props.id}>{props.children}</Label>
-            <Checkbox ref={ref} id={props.id} />
+            <Checkbox color={props.color} ref={ref} id={props.id} />
         </CheckboxWithLabelWrapper>
   )
 }

@@ -1,20 +1,26 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { StyledDiv } from './TextWithLink.style'
+import { useNavigate } from 'react-router-dom'
+import { StyledDiv, StyledLink } from './TextWithLink.style'
 
 interface TextWithLinkProps {
-  pText: string
+  paragraphText: string
   href: string
   anchorText: string
 }
 
-function TextWithLink ({ pText, href, anchorText }: TextWithLinkProps): React.ReactElement {
+function TextWithLink ({ paragraphText, href, anchorText }: TextWithLinkProps): React.ReactElement {
+  const navigate = useNavigate()
+
+  const onClick = (): void => {
+    navigate(href)
+  }
+
   return (
         <StyledDiv>
-            <p>{pText}</p>
-            <Link to={href} style={{ textDecoration: 'underline' }}>
+            <p>{paragraphText}</p>
+            <StyledLink onClick={onClick}>
                 {anchorText}
-            </Link>
+            </StyledLink>
         </StyledDiv>
   )
 }

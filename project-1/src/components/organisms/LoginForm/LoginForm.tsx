@@ -2,7 +2,7 @@ import React, { useRef, useImperativeHandle, forwardRef } from 'react'
 import Button from '../../atoms/Button/Button'
 import InputWithLabel from '../../molecules/InputWithLabel/InputWithLabel'
 import Divider from '../../atoms/Divider/Divider'
-import SocialButtonList from '../../molecules/SocialButtonList/SocialButtonList'
+import SocialButtonList, { TSocialsArray } from '../../molecules/SocialButtonList/SocialButtonList'
 import CheckboxWithLabel from '../../molecules/CheckboxWithLabel/CheckboxWithLabel'
 import FormContainer from './LoginForm.style'
 import Heading from '../../atoms/Heading/Heading'
@@ -18,7 +18,18 @@ const ForgotPasswordElement = styled.a`
     cursor: pointer;
 `
 
-function Form (props: any, ref: any): React.ReactElement {
+export interface ILoginProps {
+  socials: TSocialsArray
+  onSubmit: (e: React.FormEvent<HTMLButtonElement>) => void
+}
+
+export interface ILoginRef {
+  email: HTMLInputElement | null
+  password: HTMLInputElement | null
+  rememberMe: HTMLInputElement | null
+}
+
+function Form (props: ILoginProps, ref: React.Ref<ILoginRef>): React.ReactElement {
   const emailInputRef = useRef<HTMLInputElement>(null)
   const passwordInputRef = useRef<HTMLInputElement>(null)
   const rememberMeCheckboxRef = useRef<HTMLInputElement>(null)
@@ -27,7 +38,17 @@ function Form (props: any, ref: any): React.ReactElement {
     return {
       email: emailInputRef.current,
       password: passwordInputRef.current,
-      rememberMe: rememberMeCheckboxRef.current
+      rememberMe: rememberMeCheckboxRef.current,
+      focus () {
+        if (emailInputRef.current != null &&
+          passwordInputRef.current != null &&
+          rememberMeCheckboxRef.current != null) {
+          emailInputRef.current.value = ''
+          passwordInputRef.current.value = ''
+          rememberMeCheckboxRef.current.checked = false
+          emailInputRef.current.focus()
+        }
+      }
     }
   }, [])
 
@@ -40,8 +61,8 @@ function Form (props: any, ref: any): React.ReactElement {
             <Button color={'primary'} onClick={props.onSubmit}>Login</Button>
             <ForgotPasswordElement>Forgot password?</ForgotPasswordElement>
             <Divider text='OR'/>
-            <SocialButtonList />
-            <TextWithLink pText={'Need an account?'} href={'/register'} anchorText={'SIGN UP'}/>
+            <SocialButtonList socials={props.socials}/>
+            <TextWithLink paragraphText={'Need an account?'} href={'/register'} anchorText={'SIGN UP'}/>
         </FormContainer>
   )
 }

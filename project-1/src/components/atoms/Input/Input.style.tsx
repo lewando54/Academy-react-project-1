@@ -9,6 +9,10 @@ const StyledInput = styled.input`
     line-height: 1.75rem;
     padding: 0.25rem;
     color: black;
+
+    &:focus{
+        border: 2px solid blue;
+    }
 `
 
 export default StyledInput

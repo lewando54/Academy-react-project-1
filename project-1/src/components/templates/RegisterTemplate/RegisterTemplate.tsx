@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import RegisterForm from '../../organisms/RegisterForm/RegisterForm'
+import RegisterForm, { IRegisterProps, IRegisterRef } from '../../organisms/RegisterForm/RegisterForm'
 
-function RegisterTemplate (props: any, ref: any): React.ReactElement {
+function RegisterTemplate (props: IRegisterProps, ref: React.Ref<IRegisterRef>): React.ReactElement {
   return (
-        <RegisterForm ref={ref} onSubmit={props.onSubmit}/>
+        <RegisterForm ref={ref} onSubmit={props.onSubmit} socials={props.socials}/>
   )
 }
 

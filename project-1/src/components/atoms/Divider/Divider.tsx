@@ -2,10 +2,8 @@ import React from 'react'
 import { StyledDiv, StyledHr, StyledP } from './Divider.style'
 
 interface IDividerProps {
-  text: string
+  text?: string
 }
-
-// Divider -> Text jest optional !! Zmień nazwę. Sprawdzić defaultProps
 
 function Divider ({ text = '' }: IDividerProps): React.ReactElement {
   return (

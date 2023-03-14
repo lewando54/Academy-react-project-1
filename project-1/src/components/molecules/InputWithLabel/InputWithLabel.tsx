@@ -5,7 +5,7 @@ import StyledInputWithLabel from './InputWithLabel.style'
 
 type InputWithLabelProps = InputProps & LabelProps
 
-function InputWithLabel (props: InputWithLabelProps, ref: any): React.ReactElement {
+function InputWithLabel (props: InputWithLabelProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
   return (
         <StyledInputWithLabel>
             <Label htmlFor={props.id}>{props.children}</Label>

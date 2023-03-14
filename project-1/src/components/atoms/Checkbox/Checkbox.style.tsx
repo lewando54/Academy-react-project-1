@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
 const StyledCheckbox = styled.input`
+    --primary: rgb(236 72 153);
+    --secondary: rgb(229 231 235);
     -webkit-appearance: none;
     appearance: none;
     width: 1.6em;

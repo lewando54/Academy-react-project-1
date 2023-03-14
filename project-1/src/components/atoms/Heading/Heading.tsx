@@ -6,7 +6,7 @@ interface IHeadingProps {
   children?: React.ReactNode | string
 }
 
-function Heading ({ level = 1, children }: IHeadingProps, as: any): React.ReactElement {
+function Heading ({ level = 1, children }: IHeadingProps): React.ReactElement {
   return (
     <StyledHeading as={`h${level}`}>
       {children}
