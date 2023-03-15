@@ -2,7 +2,7 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { withRouter } from 'storybook-addon-react-router-v6';
+import { withRouter } from 'storybook-addon-react-router-v6'
 import LoginTemplate from './LoginTemplate'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -13,7 +13,12 @@ export default {
     socials: { control: 'array' },
     onSubmit: { action: 'submitted form' }
   },
-  decorators: [withRouter]
+  decorators: [withRouter],
+  parameters: {
+    reactRouter: {
+      routePath: '/login'
+    }
+  }
 } as ComponentMeta<typeof LoginTemplate>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

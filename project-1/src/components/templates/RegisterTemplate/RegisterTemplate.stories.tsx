@@ -13,7 +13,12 @@ export default {
     socials: { control: 'array' },
     onSubmit: { action: 'submitted form' }
   },
-  decorators: [withRouter]
+  decorators: [withRouter],
+  parameters: {
+    reactRouter: {
+      routePath: '/register'
+    }
+  }
 } as ComponentMeta<typeof RegisterTemplate>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
