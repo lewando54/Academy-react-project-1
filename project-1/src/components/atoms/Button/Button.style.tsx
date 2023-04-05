@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const StyledButton = styled.button`
-    --primary: rgb(236 72 153);
-    --secondary: rgb(229 231 235);
+    --primary: rgb(236, 72, 153);
+    --secondary: rgb(229, 231, 235);
     color: white;
     border-radius: 0.375rem;
     width: 100%;

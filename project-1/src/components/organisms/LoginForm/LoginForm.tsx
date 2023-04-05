@@ -34,19 +34,24 @@ function Form (props: ILoginProps, ref: React.Ref<ILoginRef>): React.ReactElemen
   const passwordInputRef = useRef<HTMLInputElement>(null)
   const rememberMeCheckboxRef = useRef<HTMLInputElement>(null)
 
+  // Rozbić focus na dwie metody
   useImperativeHandle(ref, () => {
     return {
       email: emailInputRef.current,
       password: passwordInputRef.current,
       rememberMe: rememberMeCheckboxRef.current,
       focus () {
+        if (emailInputRef.current != null) {
+          emailInputRef.current.focus()
+        }
+      },
+      clear () {
         if (emailInputRef.current != null &&
           passwordInputRef.current != null &&
           rememberMeCheckboxRef.current != null) {
           emailInputRef.current.value = ''
           passwordInputRef.current.value = ''
           rememberMeCheckboxRef.current.checked = false
-          emailInputRef.current.focus()
         }
       }
     }

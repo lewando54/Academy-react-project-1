@@ -7,6 +7,7 @@ interface IRegisterFormRef {
   email: HTMLInputElement
   password: HTMLInputElement
   focus: () => void
+  clear: () => void
 }
 
 function RegisterPage (): React.ReactElement {
@@ -25,6 +26,7 @@ function RegisterPage (): React.ReactElement {
     console.log(registerRef.current?.password.value)
     console.log('---------------')
     registerRef.current?.focus()
+    registerRef.current?.clear()
   }
 
   return (

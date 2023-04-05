@@ -26,11 +26,15 @@ function RegisterForm (props: IRegisterProps, ref: React.Ref<IRegisterRef>): Rea
       email: emailInputRef.current,
       password: passwordInputRef.current,
       focus () {
+        if (emailInputRef.current != null) {
+          emailInputRef.current.focus()
+        }
+      },
+      clear () {
         if (emailInputRef.current != null &&
           passwordInputRef.current != null) {
           emailInputRef.current.value = ''
           passwordInputRef.current.value = ''
-          emailInputRef.current.focus()
         }
       }
     }

@@ -9,6 +9,7 @@ interface ILoginFormRef {
   password: HTMLInputElement
   rememberMe: HTMLInputElement
   focus: () => void
+  clear: () => void
 }
 
 function LoginPage (): React.ReactElement {
@@ -28,6 +29,7 @@ function LoginPage (): React.ReactElement {
     console.log(loginRef.current?.rememberMe.checked)
     console.log('---------------')
     loginRef.current?.focus()
+    loginRef.current?.clear()
   }
 
   return (
