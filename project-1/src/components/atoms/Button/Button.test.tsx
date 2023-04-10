@@ -1,7 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import { render, fireEvent, screen } from '@testing-library/react'
-import renderer from 'react-test-renderer'
 import Button from './Button'
 
 describe('Button', () => {
@@ -23,7 +22,7 @@ describe('Button', () => {
       </>
     )
 
-    const button = screen.getByRole('button', { name: 'Test Button' })
+    const button = screen.getByRole('button')
 
     // Sprawdź, czy przycisk ma poprawny kolor
     expect(button).toHaveStyle({ backgroundColor: 'var(--primary)' })
