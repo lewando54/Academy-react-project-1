@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Divider should not render text by default 1`] = `
+<div
+  className="sc-gswNZR czINuU"
+  data-testid="divider"
+>
+  <hr
+    className="sc-bcXHqe dtRlJI"
+  />
+  <hr
+    className="sc-bcXHqe dtRlJI"
+  />
+</div>
+`;
+
+exports[`Divider should render correctly 1`] = `
+<div
+  className="sc-gswNZR czINuU"
+  data-testid="divider"
+>
+  <hr
+    className="sc-bcXHqe dtRlJI"
+  />
+  <hr
+    className="sc-bcXHqe dtRlJI"
+  />
+</div>
+`;
+
+exports[`Divider should render with optional text 1`] = `
+<div
+  className="sc-gswNZR czINuU"
+  data-testid="divider"
+>
+  <hr
+    className="sc-bcXHqe dtRlJI"
+  />
+  <p
+    className="sc-dkrFOg hEXefI"
+  >
+    Hello World!
+  </p>
+  <hr
+    className="sc-bcXHqe dtRlJI"
+  />
+</div>
+`;

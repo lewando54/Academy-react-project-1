@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should have color passed properly 1`] = `
+<input
+  className="sc-bcXHqe iXIuvo"
+  color="#ff0000"
+  data-testid="checkbox"
+  id="test"
+  type="checkbox"
+/>
+`;
+
+exports[`Checkbox should render correctly 1`] = `
+<input
+  className="sc-bcXHqe gGsKtD"
+  data-testid="checkbox"
+  id="test"
+  type="checkbox"
+/>
+`;

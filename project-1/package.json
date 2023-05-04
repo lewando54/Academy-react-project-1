@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "test": "jest"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "@storybook/addon-knobs": "^6.4.0",

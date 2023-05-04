@@ -1,21 +1,21 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render } from '@testing-library/react'
+import * as renderer from 'react-test-renderer'
 import Divider from './Divider'
 
 describe('Divider', () => {
-  it('renders correctly', () => {
-    const { container } = render(<Divider />)
-    expect(container.firstChild).toBeInTheDocument()
+  it('should render correctly', () => {
+    const tree = renderer.create(<Divider testId='divider'/>)
+    expect(tree).toMatchSnapshot()
   })
 
-  it('renders with optional text', () => {
-    const { container } = render(<Divider text='Hello World!' />)
-    expect(container.querySelector('p')).toHaveTextContent('Hello World!')
+  it('should render with optional text', () => {
+    const tree = renderer.create(<Divider testId='divider' text='Hello World!' />)
+    expect(tree).toMatchSnapshot()
   })
 
-  it('does not render text when text prop is empty', () => {
-    const { container } = render(<Divider />)
-    expect(container.querySelector('p')).toBeNull()
+  it('should not render text by default', () => {
+    const tree = renderer.create(<Divider testId='divider' />)
+    expect(tree).toMatchSnapshot()
   })
 })

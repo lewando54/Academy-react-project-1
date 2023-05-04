@@ -1,0 +1,231 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input should render correctly 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="text"
+/>
+`;
+
+exports[`Input should render input of type button 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="button"
+/>
+`;
+
+exports[`Input should render input of type checkbox 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="checkbox"
+/>
+`;
+
+exports[`Input should render input of type color 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="color"
+/>
+`;
+
+exports[`Input should render input of type date 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="date"
+/>
+`;
+
+exports[`Input should render input of type datetime-local 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="datetime-local"
+/>
+`;
+
+exports[`Input should render input of type email 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="email"
+/>
+`;
+
+exports[`Input should render input of type file 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="file"
+/>
+`;
+
+exports[`Input should render input of type hidden 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="hidden"
+/>
+`;
+
+exports[`Input should render input of type image 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="image"
+/>
+`;
+
+exports[`Input should render input of type month 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="month"
+/>
+`;
+
+exports[`Input should render input of type number 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="number"
+/>
+`;
+
+exports[`Input should render input of type password 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="password"
+/>
+`;
+
+exports[`Input should render input of type radio 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="radio"
+/>
+`;
+
+exports[`Input should render input of type range 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="range"
+/>
+`;
+
+exports[`Input should render input of type reset 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="reset"
+/>
+`;
+
+exports[`Input should render input of type search 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="search"
+/>
+`;
+
+exports[`Input should render input of type submit 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="submit"
+/>
+`;
+
+exports[`Input should render input of type tel 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="tel"
+/>
+`;
+
+exports[`Input should render input of type text 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="text"
+/>
+`;
+
+exports[`Input should render input of type time 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="time"
+/>
+`;
+
+exports[`Input should render input of type url 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="url"
+/>
+`;
+
+exports[`Input should render input of type week 1`] = `
+<input
+  className="sc-bcXHqe gBKJnZ"
+  data-testid="input"
+  id="test-input"
+  name="testing"
+  type="week"
+/>
+`;

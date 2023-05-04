@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly 1`] = `
+<button
+  className="sc-bcXHqe iJjCPT"
+  color="primary"
+  data-testid="testxd"
+>
+  Click me
+</button>
+`;
+
+exports[`Button should render with primary color by default 1`] = `
+<button
+  className="sc-bcXHqe iJjCPT"
+  color="primary"
+  data-testid="testxd"
+>
+  Click me
+</button>
+`;
+
+exports[`Button should render with secondary color 1`] = `
+<button
+  className="sc-bcXHqe ktYyAV"
+  color="secondary"
+  data-testid="testxd"
+>
+  Click me
+</button>
+`;

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1683195553893" clover="3.2.0">
+  <project timestamp="1683195553893" name="All files">
+    <metrics statements="38" coveredstatements="38" conditionals="11" coveredconditionals="11" methods="10" coveredmethods="10" elements="59" coveredelements="59" complexity="0" loc="38" ncloc="38" packages="6" files="11" classes="11"/>
+    <package name="Button">
+      <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="Button.style.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Button\Button.style.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
+      </file>
+      <file name="Button.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Button\Button.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Checkbox">
+      <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="4" coveredmethods="4"/>
+      <file name="Checkbox.style.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Checkbox\Checkbox.style.tsx">
+        <metrics statements="6" coveredstatements="6" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="30" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="34" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="1" type="stmt"/>
+      </file>
+      <file name="Checkbox.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Checkbox\Checkbox.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Divider">
+      <metrics statements="7" coveredstatements="7" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+      <file name="Divider.style.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Divider\Divider.style.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="Divider.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Divider\Divider.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="3" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Heading">
+      <metrics statements="6" coveredstatements="6" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+      <file name="Heading.style.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Heading\Heading.style.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+      </file>
+      <file name="Heading.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Heading\Heading.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="11" count="9" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Input">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Input.style.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Input\Input.style.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+      <file name="Input.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Input\Input.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="13" count="24" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Label">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="Label.tsx" path="D:\Projekty\Akademia\React\project-1\src\components\atoms\Label\Label.tsx">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="12" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

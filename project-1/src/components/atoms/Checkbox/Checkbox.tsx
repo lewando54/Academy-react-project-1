@@ -4,11 +4,12 @@ import StyledCheckbox from './Checkbox.style'
 export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   id: string
   color?: string
+  testId: string
 }
 
-function Checkbox ({ id, color }: CheckboxProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
+function Checkbox ({ id, color, testId }: CheckboxProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
   return (
-        <StyledCheckbox ref={ref} id={id} type={'checkbox'} color={color}/>
+        <StyledCheckbox data-testid={testId} ref={ref} id={id} type={'checkbox'} color={color}/>
   )
 }
 

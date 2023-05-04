@@ -1,53 +1,29 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render, fireEvent, screen } from '@testing-library/react'
+import * as renderer from 'react-test-renderer'
+import { render, fireEvent } from '@testing-library/react'
 import Button from './Button'
 
 describe('Button', () => {
-  it('renders correctly', () => {
-    const component = render(<Button>Click me</Button>)
-    expect(component.getByText('Click me')).toBeInTheDocument()
+  it('should render correctly', () => {
+    const tree = renderer.create(<Button testId='testxd' color="primary">Click me</Button>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('renders with the correct color', () => {
-    render(
-      <>
-        <style>
-          {`:root {
-            --primary: primaryColor;
-            --secondary: secondaryColor;
-          }`}
-        </style>
-        <Button color="primary">Test Button</Button>
-      </>
-    )
-
-    const button = screen.getByRole('button')
-
-    // Sprawdź, czy przycisk ma poprawny kolor
-    expect(button).toHaveStyle({ backgroundColor: 'var(--primary)' })
-
-    // Renderuj przycisk z innym kolorem
-    render(
-      <>
-        <style>
-          {`:root {
-            --primary: rgb(236, 72, 153);
-            --secondary: rgb(229, 231, 235);
-          }`}
-        </style>
-        <Button color="secondary">Test Button</Button>
-      </>
-    )
-
-    // Sprawdź, czy przycisk ma poprawny kolor
-    expect(button).toHaveStyle({ backgroundColor: 'var(--secondary)' })
+  it('should render with primary color by default', () => {
+    const tree = renderer.create(<Button testId='testxd'>Click me</Button>).toJSON()
+    expect(tree).toMatchSnapshot()
   })
 
-  it('calls onClick function when clicked', () => {
+  it('should render with secondary color', () => {
+    const tree = renderer.create(<Button testId='testxd' color="secondary">Click me</Button>).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
+
+  it('should call onClick function when clicked', () => {
     const onClick = jest.fn()
-    const { getByText } = render(<Button onClick={onClick}>Click me</Button>)
-    fireEvent.click(getByText('Click me'))
+    const { getByTestId } = render(<Button testId='testxd' onClick={onClick}>Click me</Button>)
+    fireEvent.click(getByTestId('testxd'))
     expect(onClick).toHaveBeenCalled()
   })
 })
