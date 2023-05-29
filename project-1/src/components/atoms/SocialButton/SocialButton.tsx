@@ -7,16 +7,17 @@ interface socialButtonProps {
   color: string
   href: string
   icon: iconProp
+  testId: string
 }
 
-function SocialButton ({ color, href, icon }: socialButtonProps): React.ReactElement {
+function SocialButton ({ color, href, icon, testId }: socialButtonProps): React.ReactElement {
   const icons: { [key in iconProp]: React.ReactNode } = {
     facebook: <FaFacebookF/>,
     google: <FaGoogle/>,
     linkedin: <FaLinkedinIn/>
   }
   return (
-        <SocialButtonStyle color={color} href={href}>
+        <SocialButtonStyle color={color} href={href} data-testid={testId}>
             {icons[icon]}
         </SocialButtonStyle>
   )

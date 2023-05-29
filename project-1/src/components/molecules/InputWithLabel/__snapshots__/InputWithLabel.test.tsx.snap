@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputWithLabel should render correctly 1`] = `
+<div
+  className="sc-gswNZR bYjhy"
+>
+  <label
+    data-testid="test"
+    htmlFor="checkid"
+  >
+    Testing
+  </label>
+  <input
+    className="sc-bcXHqe gBKJnZ"
+    data-testid="test"
+    id="checkid"
+    name="test"
+    type="text"
+  />
+</div>
+`;

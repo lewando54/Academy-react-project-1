@@ -8,8 +8,8 @@ type InputWithLabelProps = InputProps & LabelProps
 function InputWithLabel (props: InputWithLabelProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
   return (
         <StyledInputWithLabel>
-            <Label htmlFor={props.id}>{props.children}</Label>
-            <Input type={props.type} id={props.id} name={props.name} ref={ref} required={props.required}/>
+            <Label htmlFor={props.id} testId={props.testId}>{props.children}</Label>
+            <Input type={props.type} id={props.id} name={props.name} ref={ref} required={props.required} testId={props.testId}/>
         </StyledInputWithLabel>
   )
 }

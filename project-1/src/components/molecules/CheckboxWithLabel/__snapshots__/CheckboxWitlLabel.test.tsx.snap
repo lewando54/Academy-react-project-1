@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckboxWithLabel should render correctly 1`] = `
+<div
+  className="sc-gswNZR iUYsYD"
+>
+  <label
+    data-testid="test"
+    htmlFor="checkid"
+  >
+    Testing
+  </label>
+  <input
+    className="sc-bcXHqe gGsKtD"
+    data-testid="test"
+    id="checkid"
+    type="checkbox"
+  />
+</div>
+`;

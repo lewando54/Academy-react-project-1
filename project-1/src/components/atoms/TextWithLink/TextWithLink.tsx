@@ -6,9 +6,11 @@ interface TextWithLinkProps {
   paragraphText: string
   href: string
   anchorText: string
+  testId: string
+  anchorTagTestId: string
 }
 
-function TextWithLink ({ paragraphText, href, anchorText }: TextWithLinkProps): React.ReactElement {
+function TextWithLink ({ paragraphText, href, anchorText, testId, anchorTagTestId }: TextWithLinkProps): React.ReactElement {
   const navigate = useNavigate()
 
   const onClick = (): void => {
@@ -16,9 +18,9 @@ function TextWithLink ({ paragraphText, href, anchorText }: TextWithLinkProps): 
   }
 
   return (
-        <StyledDiv>
+        <StyledDiv data-testid={testId}>
             <p>{paragraphText}</p>
-            <StyledLink onClick={onClick}>
+            <StyledLink data-testid={anchorTagTestId} onClick={onClick}>
                 {anchorText}
             </StyledLink>
         </StyledDiv>

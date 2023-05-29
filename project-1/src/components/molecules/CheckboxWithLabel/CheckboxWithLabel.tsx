@@ -8,8 +8,8 @@ type CheckboxWithLabelProps = CheckboxProps & LabelProps
 function CheckboxWithLabel (props: CheckboxWithLabelProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
   return (
         <CheckboxWithLabelWrapper>
-            <Label htmlFor={props.id}>{props.children}</Label>
-            <Checkbox color={props.color} ref={ref} id={props.id} />
+            <Label htmlFor={props.id} testId={props.testId}>{props.children}</Label>
+            <Checkbox color={props.color} ref={ref} id={props.id} testId={props.testId} />
         </CheckboxWithLabelWrapper>
   )
 }

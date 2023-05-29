@@ -2,7 +2,6 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import * as renderer from 'react-test-renderer'
 import { render, screen, fireEvent } from '@testing-library/react'
-import Label from '../Label/Label'
 import Input from './Input'
 
 describe('Input', () => {
@@ -11,6 +10,7 @@ describe('Input', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  // Sprawdzenie type w HTML
   it('should render input of type button', () => {
     const tree = renderer.create(<Input id={'test-input'} name={'testing'} type={'button'} testId='input'/>)
     expect(tree).toMatchSnapshot()
@@ -122,8 +122,8 @@ describe('Input', () => {
   })
 
   it('should input text correctly', () => {
-    render(<><Label htmlFor='test-input'>Testing text input</Label><Input id={'test-input'} name={'testing'} type={'text'} testId='input'/></>)
-    const inputNode = screen.getByTestId('Testing text input')
+    render(<Input id={'test-input'} name={'testing'} type={'text'} testId='input'/>)
+    const inputNode = screen.getByTestId('input')
     fireEvent.change(inputNode, { target: { value: 'Example value for test' } })
     expect(inputNode).toHaveValue('Example value for test')
   })

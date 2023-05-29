@@ -1,19 +1,16 @@
 import React from 'react'
 import '@testing-library/jest-dom'
-import { render, screen } from '@testing-library/react'
+import * as renderer from 'react-test-renderer'
 import Label from './Label'
 
 describe('Label', () => {
-  it('renders correctly', () => {
-    const component = render(<Label htmlFor={'some-test-input'}>InnerHTML Test</Label>)
-    expect(component.container.querySelector('label[for="some-test-input"]')).toBeInTheDocument()
+  it('should render correctly', () => {
+    const tree = renderer.create(<Label htmlFor={'some-test-input'} testId='label'></Label>)
+    expect(tree).toMatchSnapshot()
   })
 
-  it('renders correct text inside', () => {
-    render(<Label htmlFor='some-test-input'>InnerHTML Test</Label>)
-    const label = screen.findByText('InnerHTML Test')
-    expect(label).toContainHTML('InnerHTML Test')
+  it('should render text "InnerHTML Test"', () => {
+    const tree = renderer.create(<Label htmlFor={'some-test-input'} testId='label'>InnerHTML Test</Label>)
+    expect(tree).toMatchSnapshot()
   })
 })
-
-// Coverage -> npm run test --coverage
