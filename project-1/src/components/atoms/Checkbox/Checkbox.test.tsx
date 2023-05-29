@@ -28,4 +28,6 @@ describe('Checkbox', () => {
     const tree = renderer.create(<Checkbox testId="checkbox" id="test" color="#ff0000" />)
     expect(tree).toMatchSnapshot()
   })
+
+  // Should render correctly when color is set + sprawdzenie na propsa
 })

@@ -18,4 +18,6 @@ describe('Divider', () => {
     const tree = renderer.create(<Divider testId='divider' />)
     expect(tree).toMatchSnapshot()
   })
+
+  // Czy text jest w body
 })

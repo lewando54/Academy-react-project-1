@@ -21,6 +21,7 @@ const ForgotPasswordElement = styled.a`
 export interface ILoginProps {
   socials: TSocialsArray
   onSubmit: (e: React.FormEvent<HTMLButtonElement>) => void
+  testId: string
 }
 
 export interface ILoginRef {
@@ -57,17 +58,19 @@ function Form (props: ILoginProps, ref: React.Ref<ILoginRef>): React.ReactElemen
     }
   }, [])
 
+  // TestId na sztywno
+
   return (
         <FormContainer>
-            <Heading>Login</Heading>
-            <InputWithLabel ref={emailInputRef} type="email" id="email" name="Email" required>Email</InputWithLabel>
-            <InputWithLabel ref={passwordInputRef} type="password" id="password" name="Password" required>Password</InputWithLabel>
-            <CheckboxWithLabel ref={rememberMeCheckboxRef} id="remember" name="Remember">Remember me?</CheckboxWithLabel>
-            <Button color={'primary'} onClick={props.onSubmit}>Login</Button>
+            <Heading testId={props.testId + '_heading'}>Login</Heading>
+            <InputWithLabel ref={emailInputRef} type="email" id="email" name="Email" required testId={props.testId + '_email'}>Email</InputWithLabel>
+            <InputWithLabel ref={passwordInputRef} type="password" id="password" name="Password" required testId={props.testId + '_password'}>Password</InputWithLabel>
+            <CheckboxWithLabel ref={rememberMeCheckboxRef} id="remember" name="Remember" testId={props.testId + '_remember'}>Remember me?</CheckboxWithLabel>
+            <Button color={'primary'} onClick={props.onSubmit} testId={props.testId + '_submit'}>Login</Button>
             <ForgotPasswordElement>Forgot password?</ForgotPasswordElement>
-            <Divider text='OR'/>
-            <SocialButtonList socials={props.socials}/>
-            <TextWithLink paragraphText={'Need an account?'} href={'/register'} anchorText={'SIGN UP'}/>
+            <Divider text='OR' testId={props.testId + '_divider'}/>
+            <SocialButtonList socials={props.socials} testId={props.testId + '_socialBtnList'}/>
+            <TextWithLink paragraphText={'Need an account?'} href={'/register'} anchorText={'SIGN UP'} testId={props.testId + '_textWithLink'} anchorTagTestId={props.testId + '_anchorTextWithLink'}/>
         </FormContainer>
   )
 }

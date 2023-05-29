@@ -26,4 +26,6 @@ describe('Button', () => {
     fireEvent.click(getByTestId('testxd'))
     expect(onClick).toHaveBeenCalled()
   })
+
+  // Text w buttonie, dodać primary + check kolor
 })
