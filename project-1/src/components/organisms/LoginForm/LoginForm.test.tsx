@@ -1,60 +1,84 @@
 import React, { createRef } from 'react'
+import { render, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import * as renderer from 'react-test-renderer'
-import { fireEvent, render, screen } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import LoginForm from './LoginForm'
 import { TSocialsArray } from '../../molecules/SocialButtonList/SocialButtonList'
 
-const socials: TSocialsArray = [
-  { id: 0, color: '#e90800', icon: 'google', href: 'https://google.pl/' },
-  { id: 1, color: '#4768aa', icon: 'facebook', href: 'https://google.pl/' },
-  { id: 2, color: '#0068c1', icon: 'linkedin', href: 'https://google.pl/' }
-]
-
-interface ILoginFormRef {
-  email: HTMLInputElement
-  password: HTMLInputElement
-  rememberMe: HTMLInputElement
-  focus: () => void
-  clear: () => void
-}
-
 describe('LoginForm', () => {
-  it('should render correctly', () => {
-    const onSubmit = jest.fn()
+  interface ILoginFormRef {
+    email: HTMLInputElement
+    password: HTMLInputElement
+    rememberMe: HTMLInputElement
+    focus: () => void
+    clear: () => void
+  }
 
-    const tree = renderer.create(<MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} testId='test'></LoginForm></MemoryRouter>)
-    expect(tree).toMatchSnapshot()
+  const socials: TSocialsArray = [
+    { id: 1, color: 'blue', href: 'Facebook', icon: 'facebook' },
+    { id: 2, color: 'red', href: 'Google', icon: 'google' }
+  ]
+  const onSubmit = jest.fn()
+  const testId = 'login-form'
+
+  it('should render all form elements', () => {
+    const { getByLabelText, getByText, getByRole } = render(
+      <MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} testId={testId} /></MemoryRouter>
+    )
+
+    expect(getByLabelText('Email')).toBeInTheDocument()
+    expect(getByLabelText('Password')).toBeInTheDocument()
+    expect(getByText('Remember me?')).toBeInTheDocument()
+    expect(getByRole('button')).toBeInTheDocument()
+    expect(getByText('Forgot password?')).toBeInTheDocument()
+    expect(getByText('OR')).toBeInTheDocument()
+    expect(getByText('Need an account?')).toBeInTheDocument()
+    expect(getByText('SIGN UP')).toBeInTheDocument()
   })
 
-  it('should call onSubmit function when submitting', () => {
-    const onSubmit = jest.fn()
-
-    render(<MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} testId='test'></LoginForm></MemoryRouter>)
-    fireEvent.click(screen.getByRole('submit'))
-    expect(onSubmit).toBeCalled()
+  it('should call onSubmit when the form is submitted', () => {
+    const { getByTestId } = render(
+      <MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} testId={testId} /></MemoryRouter>
+    )
+    const submitButton = getByTestId(`${testId}_submit`)
+    fireEvent.click(submitButton)
+    expect(onSubmit).toHaveBeenCalled()
   })
 
-  it('should focus on email', () => {
-    const ref = createRef<ILoginFormRef>()
+  it('should clear all inputs when the clear method is called', () => {
+    const formRef = createRef<ILoginFormRef>()
 
-    const onSubmit = (): void => {
-      ref.current?.focus()
-    }
+    const { getByLabelText } = render(
+      <MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} ref={formRef} testId={testId} /></MemoryRouter>
+    )
 
-    render(<MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} testId='test' ref={ref}></LoginForm></MemoryRouter>)
-    fireEvent.click(screen.getByTestId('test_submit'))
-    const focusedElement = document.activeElement
-    expect(screen.getAllByRole('email')).toEqual(focusedElement)
+    const emailInput = getByLabelText('Email')
+    const passwordInput = getByLabelText('Password')
+    const rememberMeCheckbox = getByLabelText('Remember me?')
+    fireEvent.change(emailInput, { target: { value: 'test@example.com' } })
+    fireEvent.change(passwordInput, { target: { value: 'password' } })
+    fireEvent.click(rememberMeCheckbox)
+
+    formRef.current?.clear()
+
+    expect(formRef.current?.email.value).toBe('')
+    expect(formRef.current?.password.value).toBe('')
+    expect(formRef.current?.rememberMe.checked).toBe(false)
   })
 
-  it('should clear the inputs', () => {
-    const onSubmit = jest.fn()
-    const ref = createRef<ILoginFormRef>()
+  it('should focus on the email input when the focus method is called', () => {
+    const formRef = createRef<ILoginFormRef>()
 
-    render(<MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} testId='test' ref={ref}></LoginForm></MemoryRouter>)
-    ref.current?.clear()
-    expect(ref.current?.clear).toBeCalled()
+    const { getByLabelText } = render(
+      <MemoryRouter><LoginForm socials={socials} onSubmit={onSubmit} ref={formRef} testId={testId} /></MemoryRouter>
+    )
+
+    const emailInput = getByLabelText('Email')
+    const passwordInput = getByLabelText('Password')
+    fireEvent.focus(passwordInput)
+
+    formRef.current?.focus()
+
+    expect(document.activeElement).toBe(emailInput)
   })
 })

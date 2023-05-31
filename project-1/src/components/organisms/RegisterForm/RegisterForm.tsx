@@ -42,13 +42,13 @@ function RegisterForm (props: IRegisterProps, ref: React.Ref<IRegisterRef>): Rea
 
   return (
         <FormContainer>
-            <Heading>Sign up</Heading>
-            <InputWithLabel ref={emailInputRef} type="email" id="email" name="Email" required>Email</InputWithLabel>
-            <InputWithLabel ref={passwordInputRef} type="password" id="password" name="Password" required>Password</InputWithLabel>
-            <Button color="primary" onClick={props.onSubmit}>Sign up</Button>
-            <Divider text='OR'/>
-            <SocialButtonList socials={props.socials} />
-            <TextWithLink paragraphText={'Already a user?'} href={'/login'} anchorText={'LOGIN'}/>
+            <Heading testId='headingtest'>Sign up</Heading>
+            <InputWithLabel ref={emailInputRef} type="email" id="email" name="Email" required testId='emailtest'>Email</InputWithLabel>
+            <InputWithLabel ref={passwordInputRef} type="password" id="password" name="Password" required testId='passtest'>Password</InputWithLabel>
+            <Button color="primary" onClick={props.onSubmit} testId='buttontest'>Sign up</Button>
+            <Divider text='OR' testId='dividertest'/>
+            <SocialButtonList socials={props.socials} testId='socialbuttonlisttest'/>
+            <TextWithLink paragraphText={'Already a user?'} href={'/login'} anchorText={'LOGIN'} testId='textwithlinktest'/>
         </FormContainer>
   )
 }

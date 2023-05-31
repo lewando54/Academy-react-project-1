@@ -8,12 +8,11 @@ exports[`Text With Link should render correctly 1`] = `
   <p>
     test
   </p>
-  <a
+  <p
     className="sc-gswNZR hvpnHU"
-    data-testid="atest"
     onClick={[Function]}
   >
     click me
-  </a>
+  </p>
 </div>
 `;

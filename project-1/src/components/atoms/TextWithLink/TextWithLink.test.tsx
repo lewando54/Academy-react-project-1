@@ -2,32 +2,8 @@ import React from 'react'
 import '@testing-library/jest-dom'
 import * as renderer from 'react-test-renderer'
 import TextWithLink from './TextWithLink'
-import { fireEvent, render, waitFor, screen } from '@testing-library/react'
-import { MemoryRouter, createMemoryRouter, RouterProvider } from 'react-router-dom'
-
-const setupMyTest = (): any => {
-  const router = createMemoryRouter(
-    [
-      {
-        path: '/',
-        element: <>Navigated from Start</>
-      },
-      {
-        path: '/starting/path',
-        element: <TextWithLink paragraphText='test' anchorText='click me' href='/' testId='test' anchorTagTestId='atest' />
-      }
-    ],
-    {
-
-      initialEntries: ['/starting/path'],
-      initialIndex: 0
-    }
-  )
-
-  render(<RouterProvider router={router} />)
-
-  return { router }
-}
+import { fireEvent, render } from '@testing-library/react'
+import { MemoryRouter, BrowserRouter, Route, Routes } from 'react-router-dom'
 
 describe('Text With Link', () => {
   it('should render correctly', () => {
@@ -35,15 +11,30 @@ describe('Text With Link', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  it('should navigate in app properly after click', async () => {
-    const { router } = setupMyTest()
+  it('should render paragraphText correctly', () => {
+    const { getByText } = render(<MemoryRouter><TextWithLink paragraphText='testingP' anchorText='click me' href='/' testId='test' anchorTagTestId='atest' /></MemoryRouter>)
+    expect(getByText('testingP')).toBeInTheDocument()
+  })
 
-    expect(router.state.location.pathname).toEqual('/starting/path')
+  it('should render anchor tag text correctly', () => {
+    const { getByText } = render(<MemoryRouter><TextWithLink paragraphText='testingP' anchorText='click me' href='/' testId='test' anchorTagTestId='atest' /></MemoryRouter>)
+    expect(getByText('click me')).toBeInTheDocument()
+  })
 
-    fireEvent.click(screen.getByTestId('atest'))
+  it('should navigate in app properly after click', () => {
+    const { getByText } = render(
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<TextWithLink paragraphText='testingP' anchorText='click me' href='/test' testId='test' />} />
+          <Route path='/test' element={<p>Correct!</p>} />
+        </Routes>
+      </BrowserRouter>
+    )
 
-    await waitFor(() => {
-      expect(router.state.location.pathname).toEqual('/')
-    })
+    fireEvent.click(getByText('click me'))
+
+    console.log(window.location.pathname)
+
+    expect(window.location.pathname).toBe('/test')
   })
 })

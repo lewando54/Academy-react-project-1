@@ -9,7 +9,7 @@ export const StyledDiv = styled.div`
     align-items: center;
 `
 
-export const StyledLink = styled.a`
+export const StyledLink = styled.p`
     text-decoration: underline;
     cursor: pointer;
 `

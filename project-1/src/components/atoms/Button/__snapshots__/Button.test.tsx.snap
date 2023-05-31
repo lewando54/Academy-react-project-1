@@ -19,13 +19,3 @@ exports[`Button should render with primary color by default 1`] = `
   Click me
 </button>
 `;
-
-exports[`Button should render with secondary color 1`] = `
-<button
-  className="sc-bcXHqe ktYyAV"
-  color="secondary"
-  data-testid="testxd"
->
-  Click me
-</button>
-`;

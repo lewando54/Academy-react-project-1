@@ -10,7 +10,7 @@ const LoginWrapper = styled(PageWrapper)`
 function LoginTemplate (props: ILoginProps, ref: React.Ref<ILoginRef>): React.ReactElement {
   return (
     <LoginWrapper>
-        <LoginForm ref={ref} onSubmit={props.onSubmit} socials={props.socials}/>
+        <LoginForm ref={ref} onSubmit={props.onSubmit} socials={props.socials} testId='wrapperformtest'/>
     </LoginWrapper>
   )
 }

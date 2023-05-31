@@ -1,5 +1,6 @@
 import React from 'react'
 import '@testing-library/jest-dom'
+import 'jest-styled-components'
 import * as renderer from 'react-test-renderer'
 import { render, fireEvent } from '@testing-library/react'
 import Checkbox from './Checkbox'
@@ -24,10 +25,14 @@ describe('Checkbox', () => {
     expect(getByTestId('checkbox')).not.toBeChecked()
   })
 
-  it('should have color passed properly', () => {
-    const tree = renderer.create(<Checkbox testId="checkbox" id="test" color="#ff0000" />)
-    expect(tree).toMatchSnapshot()
+  it('should have correct color on hover', () => {
+    const { getByTestId } = render(<Checkbox id='checkbox' color='red' testId='checkbox'/>)
+    expect(getByTestId('checkbox')).toHaveStyleRule('border: 0.15em solid red')
   })
 
-  // Should render correctly when color is set + sprawdzenie na propsa
+  it('should have correct color when checked', () => {
+    const { getByTestId } = render(<Checkbox id='checkbox' color='red' testId='checkbox'/>)
+    fireEvent.click(getByTestId('checkbox'))
+    expect(getByTestId('checkbox')).toHaveStyle({ backgroundColor: 'red' })
+  })
 })

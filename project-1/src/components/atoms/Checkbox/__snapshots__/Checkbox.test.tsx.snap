@@ -1,18 +1,79 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox should have color passed properly 1`] = `
-<input
-  className="sc-bcXHqe iXIuvo"
-  color="#ff0000"
-  data-testid="checkbox"
-  id="test"
-  type="checkbox"
-/>
-`;
-
 exports[`Checkbox should render correctly 1`] = `
+.c0 {
+  --primary: rgb(236 72 153);
+  --secondary: rgb(229 231 235);
+  -webkit-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.6em;
+  height: 1.6em;
+  border-radius: 0.15em;
+  margin-right: 0.5em;
+  border: 0.15em solid #e5e7eb;
+  outline: none;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.c0:before {
+  content: "";
+  font-size: 1.5em;
+  color: #fff;
+  position: absolute;
+  right: 1px;
+  top: -5px;
+  -webkit-transform: translateX(-3px) translateY(4px) rotateZ(180deg) rotateY(180deg);
+  -ms-transform: translateX(-3px) translateY(4px) rotateZ(180deg) rotateY(180deg);
+  transform: translateX(-3px) translateY(4px) rotateZ(180deg) rotateY(180deg);
+  -webkit-clip-path: polygon(100% 0%,100% 0%,100% 100%,100% 100%);
+  clip-path: polygon(100% 0%,100% 0%,100% 100%,100% 100%);
+  -webkit-transition: clip-path 0.3s ease-in-out;
+  transition: clip-path 0.3s ease-in-out;
+}
+
+.c0:hover {
+  border: 0.15em solid var(--primary);
+}
+
+.c0:checked {
+  border: 0.15em solid var(--primary);
+  background-color: var(--primary);
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.c0:checked:before {
+  content: "L";
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  right: 1px;
+  top: -5px;
+  -webkit-clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+  clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+  -webkit-transform: translateX(-3px) translateY(4px) rotateZ(45deg) rotateY(180deg);
+  -ms-transform: translateX(-3px) translateY(4px) rotateZ(45deg) rotateY(180deg);
+  transform: translateX(-3px) translateY(4px) rotateZ(45deg) rotateY(180deg);
+}
+
 <input
-  className="sc-bcXHqe gGsKtD"
+  className="c0"
   data-testid="checkbox"
   id="test"
   type="checkbox"

@@ -6,12 +6,3 @@ exports[`Label should render correctly 1`] = `
   htmlFor="some-test-input"
 />
 `;
-
-exports[`Label should render text "InnerHTML Test" 1`] = `
-<label
-  data-testid="label"
-  htmlFor="some-test-input"
->
-  InnerHTML Test
-</label>
-`;

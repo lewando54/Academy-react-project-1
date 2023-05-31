@@ -1,7 +1,7 @@
 import React from 'react'
 import '@testing-library/jest-dom'
 import * as renderer from 'react-test-renderer'
-import { render, fireEvent } from '@testing-library/react'
+import { render, fireEvent, screen } from '@testing-library/react'
 import Button from './Button'
 
 describe('Button', () => {
@@ -15,9 +15,19 @@ describe('Button', () => {
     expect(tree).toMatchSnapshot()
   })
 
+  it('should render innerHTML text', () => {
+    const { getByTestId } = render(<Button testId='testxd' color="secondary">Click me</Button>)
+    expect(getByTestId('testxd')).toHaveTextContent('Click me')
+  })
+
+  it('should render with primary color', () => {
+    render(<Button testId='button' color={'primary'}>Click me</Button>)
+    expect(screen.getByTestId('button')).toHaveStyle({ backgroundColor: 'var(--primary)' })
+  })
+
   it('should render with secondary color', () => {
-    const tree = renderer.create(<Button testId='testxd' color="secondary">Click me</Button>).toJSON()
-    expect(tree).toMatchSnapshot()
+    render(<Button testId='button' color={'secondary'}>Click me</Button>)
+    expect(screen.getByTestId('button')).toHaveStyle({ backgroundColor: 'var(--secondary)' })
   })
 
   it('should call onClick function when clicked', () => {
@@ -27,5 +37,4 @@ describe('Button', () => {
     expect(onClick).toHaveBeenCalled()
   })
 
-  // Text w buttonie, dodać primary + check kolor
 })

@@ -7,11 +7,12 @@ export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> 
   type: HTMLInputTypeAttribute
   required?: boolean
   testId: string
+  placeholder?: string
 }
 
 function Input (props: InputProps, ref: React.Ref<HTMLInputElement>): React.ReactElement {
   return (
-    <StyledInput id={props.id} name={props.name} type={props.type} required={props.required} ref={ref} data-testid={props.testId}/>
+    <StyledInput id={props.id} name={props.name} type={props.type} required={props.required} ref={ref} data-testid={props.testId} placeholder={props.placeholder}/>
   )
 }
 

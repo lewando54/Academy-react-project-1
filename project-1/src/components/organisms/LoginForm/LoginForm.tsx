@@ -65,7 +65,7 @@ function Form (props: ILoginProps, ref: React.Ref<ILoginRef>): React.ReactElemen
             <Heading testId={props.testId + '_heading'}>Login</Heading>
             <InputWithLabel ref={emailInputRef} type="email" id="email" name="Email" required testId={props.testId + '_email'}>Email</InputWithLabel>
             <InputWithLabel ref={passwordInputRef} type="password" id="password" name="Password" required testId={props.testId + '_password'}>Password</InputWithLabel>
-            <CheckboxWithLabel ref={rememberMeCheckboxRef} id="remember" name="Remember" testId={props.testId + '_remember'}>Remember me?</CheckboxWithLabel>
+            <CheckboxWithLabel ref={rememberMeCheckboxRef} id="remember" name="Remember" testId={props.testId + '_remember'} color='red'>Remember me?</CheckboxWithLabel>
             <Button color={'primary'} onClick={props.onSubmit} testId={props.testId + '_submit'}>Login</Button>
             <ForgotPasswordElement>Forgot password?</ForgotPasswordElement>
             <Divider text='OR' testId={props.testId + '_divider'}/>

@@ -9,7 +9,6 @@ describe('Heading', () => {
     expect(tree).toMatchSnapshot()
   })
 
-  // Sprawdzenie body
   it('should render innerHTML', () => {
     const tree = renderer.create(<Heading testId='heading'>Testing</Heading>)
     expect(tree).toMatchSnapshot()
@@ -17,11 +16,9 @@ describe('Heading', () => {
 
   it('should render <h1> tag by default', () => {
     const tree = renderer.create(<Heading testId='heading'>Testing</Heading>)
-    // Dodać check na H1 w body
     expect(tree).toMatchSnapshot()
   })
 
-  // Dodać checki na Hx
   it('should render <h1> tag', () => {
     const tree = renderer.create(<Heading level={1} testId='heading'>Testing</Heading>)
     expect(tree).toMatchSnapshot()
